@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .logo img {
+            height: 280px;
+            width: 280px;
+            margin-top: 125px;
+            margin-left: 27px;
+            border-radius: 150px;
+        }
+
+        .left {
+            background-color: black;
+
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            width: 25vw;
+            height: 100vh;
+            margin-left: 285px;
+
+        }
+
+        .grocery img {
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-top: 20px;
+
+        }
+
+        body {
+            display: flex;
+            background-image: url("bcimage.jpg");
+            background-size: cover;
+        }
+
+        .right {
+            width: 30vw;
+            height: 100vh;
+            border-color: white;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            background-color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            /* increase its size, not able to do */
+            margin-top: 30px;
+            margin-right: 7px;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-top: 10px;
+        }
+
+        .rs {
+            text-align: center;
+            margin-left: 15px;
+            margin-top: 33px;
+            font-size: large;
+        }
+
+        .gpay img {
+            height: 80px;
+            width: 60px;
+            width: auto;
+            margin-top: 10px;
+        }
+
+        .paytm img {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            width: 200px;
+
+            margin-left: 20px;
+            height: 60px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="left">
+        <div class="logo">
+
+            <img src="logo2.jpg" alt="logo">
+        </div>
+
+        <!-- <div class="grocery">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z3JvY2VyeXxlbnwwfHwwfHw%3D&w=1000&q=80"
+                alt="Grocery image">
+        </div> -->
+    </div>
+    <div class="right">
+        <h1>Pay using Card</h1>
+        <form action="">
+            <div class="rs">
+
+                <p>Cardholder Name</p>
+
+                <input type="text" class="inputbox" name="name" required />
+                <p>Card Number</p>
+                <input type="text" class="inputbox" name="card_number" id="card_number" placeholder="####-####-####"
+                    required />
+
+                <p>Card Type</p>
+                <select class="inputbox" name="card_type" id="card_type" required>
+                    <option value="">--Select a Card Type--</option>
+                    <option value="Visa">Visa</option>
+                    <option value="RuPay">RuPay</option>
+                    <option value="MasterCard">MasterCard</option>
+                </select>
+                <div class="expcvv">
+
+                    <p class="expcvv_text">Expiry</p>
+                    <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+
+                    <p class="expcvv_text2">CVV</p>
+                    <input type="password" class="inputbox" name="cvv" id="cvv" required />
+                </div>
+                <p></p>
+                <button type="submit" class="button">CheckOut</button>
+        </form>
+        <h2>OR</h2>
+        <div class="gpay">
+            <img src="data:image/png;base64,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"
+                alt="GPay image">
+        </div>
+        <div class="paytm">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/2560px-Paytm_Logo_%28standalone%29.svg.png"
+                height="100px" width="125px">
+        </div>
+
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
